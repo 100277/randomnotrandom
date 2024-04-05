@@ -19,23 +19,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Random Not Random',
         home: MyStatefulWidget(),
-      // initialRoute: '0',
-      // routes: {
-      //   '0': (context) => homee(),
-      //   '1': (context) =>  sec(),
-      //   '2': (context) =>  th(),
-
-      // }
-      //theme: theme(context),
-      //home:  MyHomePage(title: 'test'),
-
-
-          // floatingActionButton: FloatingActionButton(
-          //   onPressed: () {},
-          //   tooltip: 'Increment',
-          //   child: const Icon(Icons.mic),
-          // )
-
     );
   }
 }
