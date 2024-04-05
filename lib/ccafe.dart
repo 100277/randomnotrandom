@@ -5,6 +5,8 @@ const ccafe({super.key});
 
 @override
 Widget build(BuildContext context){
-  return Container();
+  return Container(
+    color: Colors.blue,
+  );
 }
 }
