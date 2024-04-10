@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class tab extends StatelessWidget {
   const tab({
-    super.key, required this.s,
+    super.key, required this.cc,
   });
-  final String s;
+  final Color cc;
 
 
   @override
@@ -15,27 +15,7 @@ class tab extends StatelessWidget {
           margin: EdgeInsets.all(30),
           decoration: BoxDecoration(
             border: Border.all (
-              // color: if(s == "breakfast")
-              // {
-                
-              //   Color.fromARGB(255, 86, 150, 202),
-              // }
-              // else if(s.equals("lunch"))
-              // {
-              //   Color.fromARGB(255, 235, 165, 137),
-              // }
-              // else if(s.equals("dinner"))
-              // {
-              //   Color.fromARGB(255, 86, 150, 202),
-              // }
-              // else if(s.equals("dessert/snack"))
-              // {
-              //    Color.fromARGB(255, 235, 165, 137),
-              // }
-              // else if(s.equals("drinks"))
-              // {
-              //   Color.fromARGB(255, 86, 150, 202),
-              // },
+              color: cc,
               
               width: 20,
               style: BorderStyle.solid,

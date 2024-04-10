@@ -46,20 +46,16 @@ class home extends StatelessWidget {
             indicatorSize: TabBarIndicatorSize.label,
 
       ),
-            )
-          
-          
-      
-      
+            ),
         ),
         ),
         body: TabBarView(
         children: [
-          tab(s: "breakfast"),
-          Center(child: Text("lunch")),
-          Center(child: Text("dinner")),
-          Center(child: Text("Desert/Snack")),
-          Center(child: Text("Drinks")),
+          tab(cc: Color.fromARGB(255, 206, 127, 96)),
+          tab(cc: Color.fromARGB(255, 245, 210, 57)),
+          tab(cc: Color.fromARGB(255, 79, 177, 216)),
+          tab(cc: Color.fromARGB(255, 54, 76, 202)),
+          tab(cc: Color.fromARGB(255, 106, 51, 207)),
         ],
         ),
       ),
