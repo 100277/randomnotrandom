@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:randomnotrandom/tab.dart"; 
+import "package:randomnotrandom/favorite.dart";
 void main() {
   runApp( home());
 }
@@ -9,6 +10,20 @@ class home extends StatelessWidget {
 
   
 
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(debugShowCheckedModeBanner: false,home: hehe());
+  }
+}
+
+class hehe extends StatefulWidget {
+  const hehe({Key? key}) : super(key: key);
+
+  @override
+  _heheState createState() => _heheState();
+}
+
+class _heheState extends State<hehe> {
   @override
   Widget build(BuildContext context) {
     List<String> menu =[
@@ -21,13 +36,29 @@ class home extends StatelessWidget {
     return DefaultTabController(
       length: menu.length,
       child: Scaffold(
+        endDrawer: favorite(),
         appBar: AppBar(
-          title: Text("Random Not Random", style: TextStyle(fontSize: 26.0, color: Colors.lightBlue, fontWeight: FontWeight.bold)),
+          title: Row(
+            children: [
+              TextButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => home()));
+                },
+                style: ButtonStyle(
+                  foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+                ),
+                child: Text("Random not Random", style: TextStyle(fontSize: 26, color: Colors.blue, fontWeight: FontWeight.bold),
+              )),
+              Spacer(),
+              IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+                icon: Icon(Icons.star, color: Colors.blue,),
+              ),
+            ],
+            ),
           backgroundColor: Colors.white,
-          actions: [
-            IconButton(icon: const Icon(Icons.star), color: Colors.lightBlue, onPressed: () {},),
-            IconButton(icon: const Icon(Icons.menu), color: Colors.lightBlue, onPressed: () {},),
-          ],
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(40),
             child: Container(
