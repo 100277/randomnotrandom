@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import "package:randomnotrandom/report.dart";
+import "package:randomnotrandom/maain.dart";
+import "package:randomnotrandom/map.dart";
 
 
 class favorite extends StatelessWidget {
@@ -32,10 +35,11 @@ class favorite extends StatelessWidget {
               color: Color.fromARGB(255, 197, 99, 164),
             ),
           ),
+        
         ListTile(
-          leading: Icon(Icons.people),
-          title: Text("Friends"),
-            onTap: () => null,
+          leading: Icon(Icons.map),
+          title: Text("Map"),
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => report())),
         ),
         ListTile(
           leading: Icon(Icons.share),
@@ -43,9 +47,9 @@ class favorite extends StatelessWidget {
           onTap: () => null,
         ),
         ListTile(
-          leading: Icon(Icons.announcement),
-          title: Text("Report"),
-          onTap: () => null,
+          leading: Icon(Icons.feedback),
+          title: Text("Feedback"),
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => report())),
         ),
         Spacer(),
         Divider(),
@@ -66,7 +70,7 @@ class favorite extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.exit_to_app),
           title: Text("Log Out"),
-          onTap: () => null,
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp())),
         ),
         ],)
     );
