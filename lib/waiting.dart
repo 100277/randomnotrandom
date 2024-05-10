@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:http/http.dart' as http;
+import "package:randomnotrandom/final.dart";
+import 'package:randomnotrandom/jas.dart';
 
 void main() {
 runApp(waiting());
@@ -21,21 +23,17 @@ class _wait extends State<waiting> {
   }
 
   Future<void> runAIComputation() async {
-
-//     void fetchData() async {
-//   final response = await http.get(Uri.parse('http://localhost:3000/scrape'));              PERHAPS??????
-
-//   if (response.statusCode == 200) {
-//     print('Data: ${response.body}');
-//   } else {
-//     print('Request failed with status: ${response.statusCode}.');
-//   }
-// }
-    // Replace this with your actual AI computation.
-    await Future.delayed(Duration(seconds: 5));
-    // Navigator.of(context).pushReplacement(
-    //   MaterialPageRoute(builder: (context) => Final()),              I NEED THIS
-    // );
+    void fetchData() async {
+        // final response = await BackgroundJsApp();
+         //await load();       
+    
+  }
+ 
+     
+    await Future.delayed(Duration(seconds: 1));
+     Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => fan()),            
+    );
   }
 
   @override
