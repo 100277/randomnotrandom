@@ -5,29 +5,10 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:csv/csv.dart';
 
-String name = '';
-String num = '';
- String link = '';
+String name = 'Five Guys';
+String num = '0';
+String link = 'https://www.google.com/maps/place/Five+Guys/data=!4m7!3m6!1s0x872b1221a7888e5d:0x579c16bdd7170c63!8m2!3d33.4478427!4d-112.0748136!16s%2Fg%2F1td189l8!19sChIJXY6IpyESK4cRYwwX170WnFc?authuser=0&hl=en&rclk=1';
  bool heh = true;
-
-Future<void> fin() async {
-  // Open the CSV file
-  final input = File('ko.csv').openRead();
-
-  // Parse the CSV file
-  final fields = await input.transform(utf8.decoder).transform(const CsvToListConverter()).toList();
-
-  // Print each row of the CSV file
-  for (final row in fields) {
-    if(heh){
-      name= row[0];
-      link = row[1];
-      break;
-    }
-    
-  }
-}
-
 
 
 class fan extends StatefulWidget {
@@ -41,24 +22,62 @@ class fan extends StatefulWidget {
 class _finalState extends State<fan> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(children: [Text("Found it!", style: TextStyle(fontSize: 30), textAlign: TextAlign.center),
-      Text("Name: $name"),
-      Column(children: [Text("Link: $link"), GestureDetector(
-            onTap: () {
-              void _launchURL(String url) async {
-                if (await canLaunchUrl((Uri.parse(link)))) {
-                  await launchUrl(Uri.parse(link));
-                } else {
-                  throw 'Could not launch $link';
-                }
-              }
+     return Scaffold(
+        body: Container(
+            height: 500,
+          width: 200,
+          margin: EdgeInsets.all(30),
+          decoration: BoxDecoration(
+            border: Border.all (
+                color: Colors.teal,
+              
+              width: 20,
+              style: BorderStyle.solid,
+              
+              ),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(40),
+              ),
+              
+              
+          ),
+          child: Column(children: <Widget>[
+             SingleChildScrollView(
+      child: Container(
+        child: Column(
+          children: [
+            Text("Found it!", style: TextStyle(fontSize: 30, color: Colors.black), textAlign: TextAlign.center),
+            Text("Name: $name", style: TextStyle(fontSize: 20,color: Colors.black,), textAlign: TextAlign.center),
+            Column(
+              children: [
+                Text("Press link", style: TextStyle(fontSize: 26,color: Colors.black,), textAlign : TextAlign.center), 
+                GestureDetector(
+                  onTap: () {
+                    void _launchURL(String url) async {
+                      if (await canLaunchUrl((Uri.parse(link)))) {
+                        await launchUrl(Uri.parse(link));
+                      } else {
+                        throw 'Could not launch $link';
+                      }
+                    }
 
-              _launchURL('$link');
-            }, )],
+                    _launchURL('$link');
+                  }, 
+                )
+              ],
+            )
+          ],
+        ),
+             ),
     )]
+            
+
+          
+
+          )
     )
     );
+
   }
 }
 
