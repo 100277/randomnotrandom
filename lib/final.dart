@@ -27,6 +27,7 @@ class _finalState extends State<fan> {
      return Scaffold(
         endDrawer: favorite(),
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
               TextButton(

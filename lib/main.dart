@@ -41,13 +41,13 @@ class _mmmState extends State<mmm>{
           child: Container(
             margin: EdgeInsets.fromLTRB(20,5,20,80),
             width: 100,
-            height: 100,
+            height: 25,
             color: Colors.cyan[800],
             child: 
                 Center(child:Text(
                   "Random not Random",
                   style: TextStyle(
-                    fontSize: 60,
+                    fontSize: 30,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
@@ -55,21 +55,20 @@ class _mmmState extends State<mmm>{
                 Expanded(
           child: Container(
             margin: EdgeInsets.fromLTRB(20,5,20,80),
-            width: 100,
-            height: 100,
+            width: 50,
+            height: 25,
             color: Colors.amber[800],),),
             
            Container(
             margin: EdgeInsets.fromLTRB(20,5,20,80),
             width: 100,
-            height: 100,
- 
+            height: 25,
             color: Colors.red[800],
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 40, vertical: 5),
-              padding: EdgeInsets.symmetric(horizontal: 650, vertical: 20),
+              //padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               width: 20, 
-              height: 20,
+              height: 30,
               child: 
                 ElevatedButton(
               onPressed: (){
