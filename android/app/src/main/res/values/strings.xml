@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Random not Random">Your App Name</string>
+    <string name="Random_not_Random">Your App Name</string>
     <string name="google_maps_key">AIzaSyDsOg4llKczf0uozY3Z7lbRABghlk4na8s</string>
 </resources>
