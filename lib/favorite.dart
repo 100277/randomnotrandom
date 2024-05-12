@@ -70,7 +70,7 @@ class favorite extends StatelessWidget {
         ListTile(
           leading: Icon(Icons.exit_to_app),
           title: Text("Log Out"),
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp())),
+          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const MyApp())),
         ),
         ],)
     );

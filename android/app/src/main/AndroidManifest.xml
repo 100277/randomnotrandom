@@ -21,6 +21,7 @@
             <meta-data
               android:name="com.google.android.gro.API_KEY"
               android:resource="AIzaSyDsOg4llKczf0uozY3Z7lbRABghlk4na8s"
+              android:value="@string/google_maps_key" 
               />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
