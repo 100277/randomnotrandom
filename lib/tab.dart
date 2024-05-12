@@ -37,7 +37,9 @@ class tabstate extends State<tab> {
               
           ),
           child: Column(children: <Widget>[
-            Text("I would like to go to the place in "),
+            SizedBox(height: 10, width: 100),
+            Text("I would like to go to the place in ", style: TextStyle(fontSize: 20), textAlign: TextAlign.center),
+            SizedBox(height: 50, width: 100),
             
             Center(
             child: DropdownButton<String>(
@@ -53,6 +55,7 @@ class tabstate extends State<tab> {
                 
           
             ),
+            SizedBox(height: 30, width: 100),
             ElevatedButton(
             onPressed: () {
               Navigator.push(

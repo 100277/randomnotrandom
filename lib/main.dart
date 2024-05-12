@@ -1,105 +1,87 @@
-import 'package:flutter/material.dart';
-// import 'package:randomnotrandom/theme.dart';
-// import 'package:randomnotrandom/home.dart';
-// import 'package:randomnotrandom/second.dart';
-// import 'package:randomnotrandom/th.dart';
+import "package:flutter/material.dart";
+import "package:randomnotrandom/login.dart";
+
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-   const MyApp({Key? key}) : super(key:key);
-  //static const String _title = "Flutter code sample";
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-
-    return const MaterialApp(
+  Widget build(BuildContext context){
+    return MaterialApp(
+      title: "My App",
       debugShowCheckedModeBanner: false,
-      title: 'Random Not Random',
-        home: MyStatefulWidget(),
+      home: mmm(),
     );
   }
 }
-class MyStatefulWidget extends StatefulWidget {
-   const MyStatefulWidget({Key? key}) : super(key:key);
 
-
-  @override
-  State<MyStatefulWidget> createState() => _MyStatefulWidget();
-
-  }
-
-
-
-
-class _MyStatefulWidget extends State<MyStatefulWidget> {
-  int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      '0',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-    ),
-    Text(
-      '1',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-    ),
-    Text(
-      '2',
-      style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),  
-    )
-  ];
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+class mmm extends StatefulWidget{
+  const mmm({Key? key}): super (key: key);
 
   @override
-  Widget build(BuildContext context) {
+  _mmmState createState() => _mmmState();
+}
+
+class _mmmState extends State<mmm>{
+  @override
+  Widget build(BuildContext context){
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: const Text("sample", style: TextStyle(color: Colors.white))
-        ),
-        body:  Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ),
-          bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.shifting,
-          items: const <BottomNavigationBarItem> [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-              backgroundColor: Colors.blue,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'search',
-              backgroundColor: Colors.red,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-              backgroundColor: Colors.green,
-            ),
-          ],
-          selectedItemColor: Colors.yellowAccent,
-          unselectedItemColor: Colors.grey[50],
-          currentIndex : _selectedIndex,
-          onTap: _onItemTapped,
-          ),
       
-    );
+      appBar: AppBar(
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Expanded(
+          child: Container(
+            margin: EdgeInsets.fromLTRB(20,5,20,80),
+            width: 100,
+            height: 100,
+            color: Colors.cyan[800],
+            child: 
+                Center(child:Text(
+                  "Random not Random",
+                  style: TextStyle(
+                    fontSize: 60,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),)),),
+                Expanded(
+          child: Container(
+            margin: EdgeInsets.fromLTRB(20,5,20,80),
+            width: 100,
+            height: 100,
+            color: Colors.amber[800],),),
+            
+           Container(
+            margin: EdgeInsets.fromLTRB(20,5,20,80),
+            width: 100,
+            height: 100,
+ 
+            color: Colors.red[800],
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 40, vertical: 5),
+              padding: EdgeInsets.symmetric(horizontal: 650, vertical: 20),
+              width: 20, 
+              height: 20,
+              child: 
+                ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => login()));
+              },
+              child: Text("Login"),
+      ))),],
+          ),
+
+                );
+      
+    
+          
   }
-
-
-
-  }
-
-
-
-
-
-
+}

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import "package:randomnotrandom/report.dart";
-import "package:randomnotrandom/maain.dart";
-import "package:randomnotrandom/map.dart";
+import 'package:randomnotrandom/main.dart';
+
 
 
 class favorite extends StatelessWidget {
